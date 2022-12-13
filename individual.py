@@ -5,11 +5,11 @@ def sump(*args):
     amin = 0
     amax = 0
     if args:
-        for i in args:
+        for index, i in enumerate(args):
             if i > args[amax]:
-                amax = args.index(i)
+                amax = index
             elif i < args[amin]:
-                amin = args.index(i)
+                amin = index
 
         return sum([i for i in args[amin+1:amax:]])
 
