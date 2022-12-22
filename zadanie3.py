@@ -2,21 +2,22 @@
 # -*- coding: utf-8 -*-
 
 
-def city(**kwargs):
+def jump(**kwargs):
     summa = 0
     n = len(kwargs)
-    maxi = 0
+    max = kwargs["Иванов"]
     for kw in kwargs:
-        summa += kwargs[kw]
-        if kwargs[kw] > maxi:
-            maxi = kwargs[kw]
-    return maxi, summa/n
+        summa = summa + kwargs[kw]
+        if kwargs[kw] > max:
+            max = kwargs[kw]
+    print("Самый длинный прыжок:", max)
+    print("Средняя длина прыжка у участников = ", summa / n)
 
 
 if __name__ == "__main__":
-    print(city(
-        Москва=2511,
-        Петербург=515,
-        Челябинск=530,
-        Ростов=354
-    ))
+    jump(
+        Иванов=5.8,
+        Козлов=6.1,
+        Ефремов=3.4,
+        Ефимов=4.6
+    )
